@@ -13,6 +13,18 @@
     
 
     
+        <meta name="description" content="MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
+      processEscapes: true
+    }
+  });
+
+
+
+
+In theory of computatio">
+    
 
     <!--Author-->
     
@@ -21,10 +33,22 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Taylor Huang&#39;s">
+        <meta property="og:title" content="Free Monoid and McMillan&#39;s Inequality">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
+      processEscapes: true
+    }
+  });
+
+
+
+
+In theory of computatio">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +56,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +75,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Taylor Huang&#39;s</title>
+    <title>Free Monoid and McMillan&#39;s Inequality - Taylor Huang&#39;s</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -153,114 +177,96 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Free Monoid and McMillan's Inequality</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-01-20
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/01/20/Free-Monoid-and-McMillan-s-Inequality/">
-        <h1 class="post-title archive">
-            Free Monoid and McMillan's Inequality
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-20
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/01/12/Prologue-UIUC/">
-        <h1 class="post-title archive">
-            Prologue: UIUC
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/12/14/ICPC-Japan-Yokohama-回顧/">
-        <h1 class="post-title archive">
-            ICPC Japan Yokohama 回顧
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/24/Quick-Note-on-the-Continued-Fraction/">
-        <h1 class="post-title archive">
-            Quick Note on the Continued Fraction
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-24
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/20/On-the-Generalised-Eigenvalue-Problems/">
-        <h1 class="post-title archive">
-            On the Generalised Eigenvalue Problems
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-20
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/16/新開張/">
-        <h1 class="post-title archive">
-            新開張
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-16
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
+<p>In theory of computation, or formal language, we usually define an alphabet to be some arbitrary finite (non-empty) set. This of course shows no problem along with construction of strings that is (usually) as below.</p>
+<p>Given a finite non-empty set $\Sigma$, a string $s$ is usually defined as<br>$$<br>s=\sigma_1\sigma_2…\sigma_r\in\Sigma^*.<br>$$</p>
+<p>A language is defined as collection of strings,</p>
+<p>$$<br>L\subseteq\Sigma^*.<br>$$<br>We took some advantages of the notation, one might just implicitly accept that there’s a binary operation that concatenate two different strings so that we don’t have to write out the comma’s in between.</p>
+<h3 id="Alphabet"><a href="#Alphabet" class="headerlink" title="Alphabet"></a>Alphabet</h3><p>It turns out we could as well integrate the above definition based on “concatenation” only, which in this context refers to a <em>free monoid</em> operation. A monoid refer to a binary algebraic structure $(M,*)$ that satisfies:</p>
+<ul>
+<li>Associativity: $(ab)c=a(bc)$</li>
+<li>Identity’s existence: $\forall a\in M:ea=ae=a$</li>
 </ul>
+<p>A monoid is called free if there’s a basis $B={b_1,…,b_r}$ that generates the whole set.<br>$$<br>\forall m\in M\exists l_i’s: b_{l_1}b_{l_2}…b_{l_k}=m,<br>$$<br>and the representation is unique, i.e.<br>$$<br>b_{l_1}b_{l_2}…b_{l_r}=b_{k_1}b_{k_2}…b_{k_r’}\iff r=r’ \land \forall i:l_i=k_i<br>$$<br>It is also worth noting that basis of a free monoid must be unique, and the cardinality of $B$ is called its free-monoid rank. Therefore we could just refer to “alphabet” as basis of some free monoid. Following that, we immediately obtain the alphabet of sub-monoid, for instance, if $\Sigma={0,1}$, then ${0,01}$ is an alphabet while ${0,1,01}$ is not.</p>
+<h3 id="McMillan’s-Inequality"><a href="#McMillan’s-Inequality" class="headerlink" title="McMillan’s Inequality"></a>McMillan’s Inequality</h3><p>McMillan’s inequality is necessary for a set of strings to be an alphabet. Suppose $S={s_1,s_2,…,s_k}\subseteq\Sigma^*$ is an alphabet. For $l_i:=|s_i|$ and $|\Sigma|=r$ we have,<br>$$<br>\sum_{1\leq i\leq k} r^{-l_i} \leq 1.<br>$$</p>
+<h4 id="proof"><a href="#proof" class="headerlink" title="proof."></a>proof.</h4><p>First we took $n$-power and expand the left-hand term, suppose the index of $r$ ranges from $n$ to $nL=n\max{l_i}$.<br>$$<br>(\sum_{1\leq i\leq k} r^{-l_i})^n = \sum_{n\leq i\leq nL} a_ir^{-i}.<br>$$<br>where $a_i$ is the number of ways to construct a length $i$ string from $n$ elements of $S$. Since $a_i\leq r^i$, we have<br>$$<br>(\sum_{1\leq i\leq k} r^{-l_i})^n\leq n(L-1).<br>$$<br>If the McMillan’s inequality does not hold, as $n\rightarrow\infty$, the above inequality will be violated since the left-hand side grows much faster than the right hand side. ${}_\square$</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+    <hr>
+    <h3>Comments:</h3>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=2183062418581965";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-comments" data-href="http://asd00012334.github.io/2019/01/20/Free-Monoid-and-McMillan-s-Inequality/index.html" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
