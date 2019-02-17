@@ -251,11 +251,11 @@ With more resource come">
 <ul>
 <li>On input $w=\langle M,10^k\rangle$ where $M$ is a Turing machine, we try to simulate $M$ on input $w$ under following modification.</li>
 <li>By space constructibility, calculate $1^{s(n)}$ as memory boundary, if during simulation $M$ attempt to use more then $s(n)$ memory, reject.</li>
-<li>Maintain a time counter, if simulatation time ever exceeds $2^{f(n)}$, reject.</li>
+<li>Maintain a time counter, if simulatation time ever exceeds $2^{s(n)}$, reject.</li>
 <li>If $M$ accepts $w$, reject; otherwise, accept.</li>
 </ul>
-<p>It is clear from declaration that $L(D)\in SPACE(s(n)).$ If $L(D)\in SPACE(o(s(n))),$ then for those machines $M$ running in space $g\in o(f)$ and large enough $N_0$, $g(n)&lt;f(n)$ whenever $n&gt;N_0.$ Therefore consider $k=N_0,$ $M$ runs to the last step. But then $w\in L(D)\iff w\not\in L(D),$ which is a contradiction.</p>
-<h4 id="Remark"><a href="#Remark" class="headerlink" title="Remark."></a>Remark.</h4><p>$SPACE(s(n))\subseteq SPACE(2^{O(s(n))})$, so the third step make sure the total process using no more then $O(s(n))$ memory.</p>
+<p>It is clear from declaration that $L(D)\in SPACE(s(n)).$ If $L(D)\in SPACE(o(s(n))),$ then for those machines $M$ running in space $g\in o(f)$ and large enough $N_0$, $g(n)&lt;s(n)$ whenever $n&gt;N_0.$ Therefore consider $k=N_0,$ $M$ runs to the last step. But then $w\in L(D)\iff w\not\in L(D),$ which is a contradiction.</p>
+<h4 id="Remark"><a href="#Remark" class="headerlink" title="Remark."></a>Remark.</h4><p>$SPACE(s(n))\subseteq TIME(2^{O(s(n))})$, so the third step make sure the total process using no more then $O(s(n))$ memory.</p>
 <h3 id="Time-Heirachy-Theorem"><a href="#Time-Heirachy-Theorem" class="headerlink" title="Time Heirachy Theorem"></a>Time Heirachy Theorem</h3><p>Given $t(n)$ weakly time constructible, then there exists a language $A$ that</p>
 <ul>
 <li>$A\in TIME(t(n))$</li>
