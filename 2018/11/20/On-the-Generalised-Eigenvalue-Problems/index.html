@@ -8,22 +8,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- added for latex and verification -->    
+<meta name="google-site-verification" content="S_xM9GykWsovjfZCTtQATi85eW3bkwNfP9rA7nHNI4Q">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
     <!--Description-->
 
     
 
     
-        <meta name="description" content="MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
-      processEscapes: true
-    }
-  });
-
-
-
-
-Standard Eigenvalue Pro">
+        <meta name="description" content="Standard Eigenvalue Probelm (SEP)給定矩陣 $A\in\mathbb{C}^{n\times n}$，求解$$Ax=\lambda x,x\neq 0$$
+Generalised Eigenvalue Problem (GEP)給定矩陣 $A,B\in\mathbb{">
     
 
     <!--Author-->
@@ -38,17 +43,8 @@ Standard Eigenvalue Pro">
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
-      processEscapes: true
-    }
-  });
-
-
-
-
-Standard Eigenvalue Pro">
+        <meta property="og:description" content="Standard Eigenvalue Probelm (SEP)給定矩陣 $A\in\mathbb{C}^{n\times n}$，求解$$Ax=\lambda x,x\neq 0$$
+Generalised Eigenvalue Problem (GEP)給定矩陣 $A,B\in\mathbb{">
     
 
     <!--Open Graph Site Name-->
@@ -227,18 +223,7 @@ Standard Eigenvalue Pro">
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
-</script>
-
-<h3 id="Standard-Eigenvalue-Probelm-SEP"><a href="#Standard-Eigenvalue-Probelm-SEP" class="headerlink" title="Standard Eigenvalue Probelm (SEP)"></a>Standard Eigenvalue Probelm (SEP)</h3><p>給定矩陣 $A\in\mathbb{C}^{n\times n}$，求解<br>$$<br>Ax=\lambda x,x\neq 0<br>$$</p>
+                <h3 id="Standard-Eigenvalue-Probelm-SEP"><a href="#Standard-Eigenvalue-Probelm-SEP" class="headerlink" title="Standard Eigenvalue Probelm (SEP)"></a>Standard Eigenvalue Probelm (SEP)</h3><p>給定矩陣 $A\in\mathbb{C}^{n\times n}$，求解<br>$$<br>Ax=\lambda x,x\neq 0<br>$$</p>
 <h3 id="Generalised-Eigenvalue-Problem-GEP"><a href="#Generalised-Eigenvalue-Problem-GEP" class="headerlink" title="Generalised Eigenvalue Problem (GEP)"></a>Generalised Eigenvalue Problem (GEP)</h3><p>給定矩陣 $A,B\in\mathbb{C}^{n\times n}$，求解<br>$$<br>Ax=\lambda Bx,x\neq 0<br>$$</p>
 <p>如果 $B$ 可逆，那麼這類GEP形同 $B^{-1}A$ 的 SEP，但這個想法計算上並不可行。</p>
 <ul>
