@@ -23,7 +23,8 @@
 
 
 
-With more resource come">
+
+Randomized Primality T">
     
 
     <!--Author-->
@@ -33,7 +34,7 @@ With more resource come">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Heirachy Theorem">
+        <meta property="og:title" content="Randomized Primality Test">
     
 
     <!--Open Graph Description-->
@@ -48,7 +49,8 @@ With more resource come">
 
 
 
-With more resource come">
+
+Randomized Primality T">
     
 
     <!--Open Graph Site Name-->
@@ -75,7 +77,7 @@ With more resource come">
 
     <!-- Title -->
     
-    <title>Heirachy Theorem - Taylor Huang&#39;s</title>
+    <title>Randomized Primality Test - Taylor Huang&#39;s</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -185,13 +187,13 @@ With more resource come">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Heirachy Theorem</h1>
+                    <h1>Randomized Primality Test</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2019-02-16
+                            2019-03-22
                         
                     </span>
                 </div>
@@ -212,7 +214,7 @@ With more resource come">
                         
 
 
-<a href="/tags/complexity/">#complexity</a>
+<a href="/tags/prime-complexity/">#prime, complexity</a>
 
 
                     
@@ -238,30 +240,56 @@ With more resource come">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
 </script>
 
-<p>With more resource comes more power, at least computationally speaking.</p>
-<h3 id="Constructibility"><a href="#Constructibility" class="headerlink" title="Constructibility"></a>Constructibility</h3><p>Given a function, $f:\mathbb{N}\rightarrow\mathbb{N}$, it is said to be (weakly) time/space construtible if and only if the map $1^n\mapsto 1^{f(n)}$ could be computed in $O(f(n))$ time/space resources.</p>
-<p>It basically says that $f$ is computationally easier to determine.</p>
-<h3 id="Diagonalization-for-Undecidability"><a href="#Diagonalization-for-Undecidability" class="headerlink" title="Diagonalization for Undecidability"></a>Diagonalization for Undecidability</h3><p>One way to show that there’s a problem undecidable is by diagonalization.<br>Consider the following language,<br>$$<br>L={w=\langle M, x\rangle: w\not\in L(M)},<br>$$<br>where M is a Turing machine. If machine $D$ decides $L,$ then<br>$$<br>w=\langle D,x\rangle \in L\iff w\not\in L(D)=L,<br>$$<br>which is a contradiction. Thus ther exists a undecidable problem.</p>
-<h3 id="Space-Heirachy-Theorem"><a href="#Space-Heirachy-Theorem" class="headerlink" title="Space Heirachy Theorem"></a>Space Heirachy Theorem</h3><p>Given $s(n)$ weakly space constructible, then there exists a language $A$ that</p>
+
+<h1 id="Randomized-Primality-Test"><a href="#Randomized-Primality-Test" class="headerlink" title="Randomized Primality Test"></a>Randomized Primality Test</h1><p>Primality testing is a computational problem that determines whether a given integer $n$ is prime or composite.<br>$$<br>PRIMES:=\{p\in\mathbb{N}:\forall n&lt;p, n\nmid p\}<br>$$</p>
+<p>Below we enlist several primality testing algorithm, and will ellaborate one BPP variant of the Miller-Rabin test.</p>
+<h3 id="Theorem-Strassen-Solovay"><a href="#Theorem-Strassen-Solovay" class="headerlink" title="Theorem [Strassen, Solovay]"></a>Theorem [Strassen, Solovay]</h3><p>$$<br>PRIMES\in coRP<br>$$<br>On input $n\in\mathbb{N}$, </p>
 <ul>
-<li>$A\in SPACE(s(n))$</li>
-<li>$A\not\in SPACE(o(s(n)))$</li>
+<li>randomly pick $a\in\mathbb{Z}_n$</li>
+<li>compute the legendre symbol $\pmatrix{\frac{a}{n}}$</li>
+<li>if $\pmatrix{\frac{a}{n}}$ = 0 or $a^{(n-1)/2}$, reject; otherwise, accept.</li>
 </ul>
-<p>We are showing this by also diagonalization. Consider a Turing machine $D$ doing the following,</p>
+<h3 id="Theorem-Miller-Rabin"><a href="#Theorem-Miller-Rabin" class="headerlink" title="Theorem [Miller, Rabin]"></a>Theorem [Miller, Rabin]</h3><p>$$<br>PRIMES\in coRP<br>$$<br>On input $n\in\mathbb{Z}$,</p>
 <ul>
-<li>On input $w=\langle M,10^k\rangle$ where $M$ is a Turing machine, we try to simulate $M$ on input $w$ under following modification.</li>
-<li>By space constructibility, calculate $1^{s(n)}$ as memory boundary, if during simulation $M$ attempt to use more then $s(n)$ memory, reject.</li>
-<li>Maintain a time counter, if simulatation time ever exceeds $2^{f(n)}$, reject.</li>
-<li>If $M$ accepts $w$, reject; otherwise, accept.</li>
+<li>randomly pick $a\in\mathbb{Z}_n^\times$</li>
+<li>assume $n=r\cdot 2^k$, $r$ is odd</li>
+<li>accept if and only if the following holds<ul>
+<li>$a^r=1$</li>
+<li>$\exists l&lt;k, a^{r\cdot 2^l}=-1$</li>
 </ul>
-<p>It is clear from declaration that $D\in SPACE(s(n)).$ If $D\in SPACE(o(s(n))),$ then for those machines $M$ running in space $g\in o(f)$ and large enough $N_0$, $g(n)&lt;f(n)$ whenever $n&gt;N_0.$ Therefore consider $k=N_0,$ $M$ runs to the terminal state. But then $w\in L(D)\iff w\not\in L(D),$ which is a contradiction.</p>
-<h4 id="Remark"><a href="#Remark" class="headerlink" title="Remark."></a>Remark.</h4><p>$SPACE(s(n))\subseteq SPACE(2^{O(s(n))})$, so the third step make sure the total process using no more then $O(s(n))$ memory for the third step.</p>
-<h3 id="Time-Heirachy-Theorem"><a href="#Time-Heirachy-Theorem" class="headerlink" title="Time Heirachy Theorem"></a>Time Heirachy Theorem</h3><p>Given $t(n)$ weakly time constructible, then there exists a language $A$ that</p>
+</li>
+</ul>
+<h3 id="Theorem-Agrawal-Kayal-Saxena"><a href="#Theorem-Agrawal-Kayal-Saxena" class="headerlink" title="Theorem [Agrawal, Kayal, Saxena]"></a>Theorem [Agrawal, Kayal, Saxena]</h3><p>$$<br>PRIMES\in P<br>$$</p>
+<hr>
+<p>We are going to prove a weaker version of the above theorem, which gives a $BPP$ algorithm. Note that<br>$$<br>P\subseteq coRP\subseteq BPP<br>$$<br>The algorithm we’re going to prove could be slighly modified to elliminate error at one side. In practice, the Miller-Rabin test is most oftenly used. Below we are going to ignore the fact that a uniform random number shall be approximated, instead we uses a exact random variable to make our analysis easier, since it will not affect much.</p>
+<h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h3><p>$$<br>PRIMES\in BPP<br>$$</p>
+<p><strong>proof.</strong> </p>
+<p>To prove $PRIMES\in BPP$, consider the following algorithm.</p>
+<p>On input $n\in\mathbb{Z}$,</p>
 <ul>
-<li>$A\in TIME(t(n))$</li>
-<li>$A\not\in TIME(o(t/\log t))$</li>
+<li>reject even numbers (assume n is odd)</li>
+<li>randomly pick $a_i\in\mathbb{Z}_n^\times$ for $1\leq i\leq t$</li>
+<li>compute sequence $\{a_i^{(n-1)/2}:1\leq i\leq t\}$<ul>
+<li>if it is not all $\pm 1$, reject</li>
+<li>if of form 1,1,…,1, reject</li>
+<li>otherwise, accept</li>
 </ul>
-<p>The proof is essentially similar, but note that to avoid zigzag that typically wasting time, we need to drag the time counter and state information along with the pointer location. That would cause $O(log(t))$ time for each transition.</p>
+</li>
+</ul>
+<p>The time complexity for this algorithm is clearly polynomial w.r.t. input length. We only need to show its correctness, i.e. it makes the right decision with high probability.</p>
+<p><em>Sufficiency</em><br>If $n$ is prime, then by Fermat’s little theorem,<br>$$<br>a^{(n-1)/2} = \pm 1.<br>$$<br>Since $\mathbb{Z}_n^\times=\langle\alpha\rangle$ is cyclic, we have,<br>$$<br>a^{(n-1)/2}=-1 \iff a\not\in\langle\alpha^2\rangle.<br>$$<br>So $Pr(a^{(n-1)/2}=-1|a\in\mathbb{Z}_n^\times)=\frac{1}{2}$, the acceptance probability is $1-2^{-t}$.</p>
+<p><em>Necessity</em></p>
+<p>Now that we assume $n$ is composite, if $gcd(a,n)&gt;1$, we just naturally reject $n$. We want to show that with high probability the sequence will contain non-$\pm 1$.</p>
+<ul>
+<li>Case $n=m_1m_2$, co-prime proper factoring.</li>
+</ul>
+<p>Consider the following subsets,<br>$$<br>S_+:=\{a\in\mathbb{Z}_n^{\times}: a^{(n-1)/2}=1\},\\<br>S_{-}:=\{a\in\mathbb{Z}_n^{\times}: a^{(n-1)/2}=-1\}.<br>$$</p>
+<p>If $S_{-}$ is empty, then the algorithm certainly reject. Otherwise, assume $b\in S_{-}$, and of course $1\in S_+$.</p>
+<p>By chinese remainder theorem,<br>$$<br>\mathbb{Z}_{n}\cong\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}.<br>$$<br>Pick $c\mapsto (1,b)$ by the above isomorphism. Then<br>$$<br>c^{(n-1)/2}\mapsto (1,-1)\not\in \mathbb{Z},<br>$$<br>therefore $c^{(n-1)/2}\not\in S:=S_+\cup S_-$, then $S_+\subsetneq S\subsetneq \mathbb{Z}_n$. Since multiplication is closed under $S, S_+$, both are proper subgroups. By Lagrange theorem, $|S_+|\leq \frac{\phi(n)}{2}$. Therefore<br>$$<br>Pr(\exists i,a_i^{(n-1)/2}\neq\pm 1)\geq 1-2^{-t},<br>$$<br>is a lower bound for the rejection probability.</p>
+<ul>
+<li>Case $n = p^e$, prime power.</li>
+</ul>
+<p>Since $\mathbb{Z}_n^\times=\langle\alpha\rangle$ is cyclic, assume $a=\alpha^k$. We have,<br>$$<br>a^{(n-1)/2}=\pm 1\mod n\\<br>\Rightarrow \alpha^{k(n-1)}= 1\\<br>\Rightarrow k(n-1)=0\mod\phi(n)<br>$$<br>Since $n-1=p^e-1=(p-1)(1+p+p^2+…p^{e-1})$ and $\phi(n)=p^e-p^{e-1}.$<br>The above implies that<br>$$<br>k(1+p+…+p^{e-1})=0\mod p^{e-1}\\<br>\Rightarrow k=0\mod p^{e-1}<br>$$<br>Therefore $Pr(a=\pm 1)\leq Pr(k=0\mod p^{e-1})=\frac{1}{p^{e-1}}\leq\frac{1}{2}$. So a lower bound for the rejection probability is $1-2^{-t}$. $_\Box$</p>
 
 
                 
@@ -286,7 +314,7 @@ With more resource come">
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <div class="fb-comments" data-href="http://asd00012334.github.io/2019/02/16/Heirachy-Theorem/index.html" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
+    <div class="fb-comments" data-href="http://asd00012334.github.io/2019/03/22/Randomized-Primality-Test/index.html" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
 
                 </div>
             

@@ -242,12 +242,12 @@ Standard Eigenvalue Pro">
 <h3 id="Generalised-Eigenvalue-Problem-GEP"><a href="#Generalised-Eigenvalue-Problem-GEP" class="headerlink" title="Generalised Eigenvalue Problem (GEP)"></a>Generalised Eigenvalue Problem (GEP)</h3><p>給定矩陣 $A,B\in\mathbb{C}^{n\times n}$，求解<br>$$<br>Ax=\lambda Bx,x\neq 0<br>$$</p>
 <p>如果 $B$ 可逆，那麼這類GEP形同 $B^{-1}A$ 的 SEP，但這個想法計算上並不可行。</p>
 <ul>
-<li><p>Quadratic Eigenvalue Problem (QEP)<br>$$<br>(\lambda^2M+\lambda D+K)x=0,x\neq 0<br>$$<br>對應到 GEP 設定為:<br>$$<br>\pmatrix{-D&amp;-M\\I&amp;0}\pmatrix{x\\\lambda x}=\frac{1}{\lambda}\pmatrix{K&amp;0\\0&amp;I}\pmatrix{x\\ \lambda x}<br>$$</p>
+<li><p>Quadratic Eigenvalue Problem (QEP)<br>$$<br>(\lambda^2M+\lambda D+K)x=0,x\neq 0<br>$$<br>對應到 GEP 設定為:<br>$$<br>\pmatrix{-D&amp;-M\\I&amp;0}\pmatrix{x\\\lambda x}=\frac{1}{\lambda}\pmatrix{K&amp;0\\0&amp;I}\pmatrix{x\ \lambda x}<br>$$</p>
 </li>
 <li><p>Polynomial Eigenvalue Problem (PEP)<br>$$<br>\sum_{0\leq i\leq n}\lambda^iA_ix=0,x\neq 0<br>$$</p>
 </li>
 </ul>
-<p>對應到 GEP 設定為:<br>$$<br>\pmatrix{-A_1&amp;…&amp;…&amp;-A_n\\I&amp;0&amp;…&amp;0\\&amp;\ddots&amp;\ddots&amp;\vdots\\0&amp;&amp;I&amp;0<br>}\pmatrix{x\\ \lambda x\\ \vdots\\ \lambda^{n-1} x}=\frac{1}{\lambda}\pmatrix{A_0\\&amp;I\\&amp;&amp;\ddots\\&amp;&amp;&amp;I}\pmatrix{x\\ \lambda x\\ \vdots\\ \lambda^{n-1} x}<br>$$</p>
+<p>對應到 GEP 設定為:<br>$$<br>\pmatrix{-A_1&amp;…&amp;…&amp;-A_n\\I&amp;0&amp;…&amp;0\\&amp;\ddots&amp;\ddots&amp;\vdots\\0&amp;&amp;I&amp;0<br>}\pmatrix{x\\\lambda x\\\vdots\\\lambda^{n-1} x}=\frac{1}{\lambda}\pmatrix{A_0\\&amp;I\\&amp;&amp;\ddots\\&amp;&amp;&amp;I}\pmatrix{x\\\lambda x\\\vdots\\\lambda^{n-1} x}<br>$$</p>
 <ul>
 <li>Rational Eigenvalue Problem (REP)<br>$$<br>A(\lambda)x=x,x\neq 0,<br>$$<br>其中 $a_{ij}(\lambda)\in Quot(\mathbb{C}[\lambda])$ 為有理式。</li>
 </ul>
@@ -255,7 +255,7 @@ Standard Eigenvalue Pro">
 <ul>
 <li>SEP</li>
 </ul>
-<p>考慮偏微分算子<br>$$<br>D_t:\pmatrix{x_1\\ \vdots\\x_n}\mapsto \pmatrix{\frac{dx_1}{dt}\\ \vdots\\ \frac{dx_n}{dt}}<br>$$<br>對於 $A\in\mathbb{C}^{n\times n}$ ，一階偏微分方程組<br>$$<br>D_tx=Ax<br>$$</p>
+<p>考慮偏微分算子<br>$$<br>D_t:\pmatrix{x_1\ \vdots\\x_n}\mapsto \pmatrix{\frac{dx_1}{dt}\ \vdots\ \frac{dx_n}{dt}}<br>$$<br>對於 $A\in\mathbb{C}^{n\times n}$ ，一階偏微分方程組<br>$$<br>D_tx=Ax<br>$$</p>
 <p>若 $\lambda\in\sigma(A), Av=\lambda v$，帶入可發現<br>$$<br>x = v\cdot e^{\lambda t}<br>$$<br>構成一組可行解。</p>
 <ul>
 <li>QEP</li>

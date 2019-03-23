@@ -229,9 +229,9 @@
 <p>連分數在數學上是一個有趣的主題，小時候大家玩過摺紙遊戲，把長方形的紙片等角對折，剪去以折線為對角的正方形，然後不斷重複做一樣的事情之後，把同樣大小的正方形蒐集起來，這時候正方形由大到小的個數就構成了一個連分數。</p>
 <h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>考慮一串整數的序列，<br>$$<br>a_0,a_1,a_2,…<br>$$<br>其中 $a_i\geq 0,\forall i&gt;0$。<br>我們定義有限項連分數，<br>$$<br>s_n=[a_0;a_1,a_2,…,a_n]:=a_0+\frac{1}{a_1+\frac{1}{a_2+\frac{…}{a_n}}}。<br>$$<br>如果 $s_n$ 收斂，那麼定義，<br>$$<br>[a_0;a_1,a_2,…]:=\lim_{i\rightarrow\infty}s_n。<br>$$</p>
 <h3 id="如何計算"><a href="#如何計算" class="headerlink" title="如何計算"></a>如何計算</h3><p><strong>從連分數算出質因子表達式</strong></p>
-<p>定義<br>$$<br>\frac{p_i}{q_i}=[a_0;a_1,…a_i]，<br>$$<br>其中 $p_i, q_i$ 互質，那麼我們有遞推關係<br>$$<br>p_n=a_n\cdot p_{n-1}+p_{n-2}\\<br>q_n=a_n\cdot q_{n-1}+q_{n-2}<br>$$</p>
+<p>定義<br>$$<br>\frac{p_i}{q_i}=[a_0;a_1,…a_i]，<br>$$<br>其中 $p_i, q_i$ 互質，那麼我們有遞推關係<br>$$<br>p_n=a_n\cdot p_{n-1}+p_{n-2}\\\<br>q_n=a_n\cdot q_{n-1}+q_{n-2}<br>$$</p>
 <p><strong>從實數構造出連分數表達式</strong></p>
-<p>任何實數 $r\in\mathbb{R}$ 都可以被連分數序列表達，<br>$$<br>r = [a_0;a_1,…]。<br>$$<br>並且考慮<br>$$<br>r_0 = r\\<br>r_n=\frac{1}{r_{n-1}-a_{n-1}}，<br>$$<br>那麼我們有<br>$$<br>a_n=\lfloor r_n\rfloor。<br>$$</p>
+<p>任何實數 $r\in\mathbb{R}$ 都可以被連分數序列表達，<br>$$<br>r = [a_0;a_1,…]。<br>$$<br>並且考慮<br>$$<br>r_0 = r\\\<br>r_n=\frac{1}{r_{n-1}-a_{n-1}}，<br>$$<br>那麼我們有<br>$$<br>a_n=\lfloor r_n\rfloor。<br>$$</p>
 <p><strong>表達的唯一性</strong></p>
 <p>考慮<br>$$<br>s = [a_0;a_1,…,a_n+1] = [a_0;a_1,…,a_n,1]，<br>$$<br>除去這種情況外，連分數的表達是唯一的。</p>
 <h3 id="有理逼近"><a href="#有理逼近" class="headerlink" title="有理逼近"></a>有理逼近</h3><p>考慮我們想要逼近區間 $[l,r),r=l+1\in\mathbb{Z}$ 之間的某個數字 $x$，模仿二分逼近法，我們可以先定義一個”中值函數”<br>$$<br>mid(\frac{a}{b},\frac{c}{d})=\frac{a+c}{b+d}。<br>$$<br>如果<br>$$<br>\frac{a}{b}&lt;\frac{c}{d}，<br>$$<br>那麼顯然有<br>$$<br>\frac{a}{b}&lt;mid(\frac{a}{b},\frac{c}{d})&lt;\frac{c}{d}。<br>$$<br>可以透過下面迭代使解收斂至 $x$<br>$$<br>m_i = mid(l_i,r_i)\\<br>\pmatrix{l_0\\r_0} = \pmatrix{l\\r}\\<br>\pmatrix{l_{i+1}\\r_{i+1}} = \pmatrix{m_i\\r_i},m_i&lt;x\\<br>\pmatrix{l_{i+1}\\r_{i+1}} = \pmatrix{l_i\\m_i},x&lt;m_i<br>$$</p>
