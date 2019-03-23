@@ -27,17 +27,7 @@
     
 
     
-        <meta name="description" content="MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
-      processEscapes: true
-    }
-  });
-
-
-
-
-Primality testing is a ">
+        <meta name="description" content="Primality testing is a computational problem that determines whether a given integer $n$ is prime or composite.$$PRIMES:=\{p\in\mathbb{N}:\forall n&amp;lt">
     
 
     <!--Author-->
@@ -52,17 +42,7 @@ Primality testing is a ">
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
-      processEscapes: true
-    }
-  });
-
-
-
-
-Primality testing is a ">
+        <meta property="og:description" content="Primality testing is a computational problem that determines whether a given integer $n$ is prime or composite.$$PRIMES:=\{p\in\mathbb{N}:\forall n&amp;lt">
     
 
     <!--Open Graph Site Name-->
@@ -241,18 +221,7 @@ Primality testing is a ">
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
-</script>
-
-<p>Primality testing is a computational problem that determines whether a given integer $n$ is prime or composite.<br>$$<br>PRIMES:=\{p\in\mathbb{N}:\forall n&lt;p, n\nmid p\}<br>$$</p>
+                <p>Primality testing is a computational problem that determines whether a given integer $n$ is prime or composite.<br>$$<br>PRIMES:=\{p\in\mathbb{N}:\forall n&lt;p, n\nmid p\}<br>$$</p>
 <p>Below we enlist several primality testing algorithm, and will ellaborate one BPP variant of the Miller-Rabin test.</p>
 <h3 id="Theorem-Strassen-Solovay"><a href="#Theorem-Strassen-Solovay" class="headerlink" title="Theorem [Strassen, Solovay]"></a>Theorem [Strassen, Solovay]</h3><p>$$<br>PRIMES\in coRP<br>$$<br>On input $n\in\mathbb{N}$, </p>
 <ul>
@@ -296,7 +265,7 @@ Primality testing is a ">
 </ul>
 <p>Consider the following subsets,<br>$$<br>S_+:=\{a\in\mathbb{Z}_n^{\times}: a^{(n-1)/2}=1\},\\<br>S_{-}:=\{a\in\mathbb{Z}_n^{\times}: a^{(n-1)/2}=-1\}.<br>$$</p>
 <p>If $S_{-}$ is empty, then the algorithm certainly reject. Otherwise, assume $b\in S_{-}$, and of course $1\in S_+$.</p>
-<p>By chinese remainder theorem,<br>$$<br>\mathbb{Z}_{n}\cong\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}.<br>$$<br>Pick $c\mapsto (1,b)$ by the above isomorphism. Then<br>$$<br>c^{(n-1)/2}\mapsto (1,-1)\not\in \mathbb{Z},<br>$$<br>therefore $c^{(n-1)/2}\not\in S:=S_+\cup S_-$, then $S_+\subsetneq S\subsetneq \mathbb{Z}_n$. Since multiplication is closed under $S, S_+$, both are proper subgroups. By Lagrange theorem, $|S_+|\leq \frac{\phi(n)}{2}$. Therefore<br>$$<br>Pr(\exists i,a_i^{(n-1)/2}\neq\pm 1)\geq 1-2^{-t},<br>$$<br>is a lower bound for the rejection probability.</p>
+<p>By chinese remainder theorem,<br>$$<br>\mathbb{Z}_{n}\cong\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}.<br>$$<br>Pick $c\mapsto (1,b)$ by the above isomorphism. Then<br>$$<br>c^{(n-1)/2}\mapsto (1,-1),<br>$$<br>therefore $c^{(n-1)/2}\not\in S:=S_+\cup S_-$, then $S_+\subsetneq S\subsetneq \mathbb{Z}_n$. Since multiplication is closed under $S, S_+$, both are proper subgroups. By Lagrange theorem, $|S|\leq \frac{\phi(n)}{2}$. Therefore<br>$$<br>Pr(\exists i,a_i^{(n-1)/2}\neq\pm 1)\geq 1-2^{-t},<br>$$<br>is a lower bound for the rejection probability.</p>
 <ul>
 <li>Case $n = p^e$, prime power.</li>
 </ul>
