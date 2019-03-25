@@ -239,6 +239,7 @@
 </ul>
 </li>
 </ul>
+<p>We leave the proof to <a href="https://asd00012334.github.io/2019/03/25/Miller-Rabin-Primality-Test/">this article</a>.</p>
 <h3 id="Theorem-Agrawal-Kayal-Saxena"><a href="#Theorem-Agrawal-Kayal-Saxena" class="headerlink" title="Theorem [Agrawal, Kayal, Saxena]"></a>Theorem [Agrawal, Kayal, Saxena]</h3><p>$$<br>PRIMES\in P<br>$$</p>
 <hr>
 <p>We are going to prove a weaker version of the above theorem, which gives a $BPP$ algorithm. Note that<br>$$<br>P\subseteq coRP\subseteq BPP<br>$$<br>The algorithm we’re going to prove could be slighly modified to elliminate error at one side. In practice, the Miller-Rabin test is most oftenly used. Below we are going to ignore the fact that a uniform random number shall be approximated, instead we uses a exact random variable to make our analysis easier, since it will not affect much.</p>
@@ -265,7 +266,7 @@
 </ul>
 <p>Consider the following subsets,<br>$$<br>S_+:=\{a\in\mathbb{Z}_n^{\times}: a^{(n-1)/2}=1\},\\<br>S_{-}:=\{a\in\mathbb{Z}_n^{\times}: a^{(n-1)/2}=-1\}.<br>$$</p>
 <p>If $S_{-}$ is empty, then the algorithm certainly reject. Otherwise, assume $b\in S_{-}$, and of course $1\in S_+$.</p>
-<p>By chinese remainder theorem,<br>$$<br>\mathbb{Z}_{n}\cong\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}.<br>$$<br>Pick $c\mapsto (1,b)$ by the above isomorphism. Then<br>$$<br>c^{(n-1)/2}\mapsto (1,-1),<br>$$<br>therefore $c^{(n-1)/2}\not\in S:=S_+\cup S_-$, then $S_+\subsetneq S\subsetneq \mathbb{Z}_n$. Since multiplication is closed under $S, S_+$, both are proper subgroups. By Lagrange theorem, $|S|\leq \frac{\phi(n)}{2}$. Therefore<br>$$<br>Pr(\exists i,a_i^{(n-1)/2}\neq\pm 1)\geq 1-2^{-t},<br>$$<br>is a lower bound for the rejection probability.</p>
+<p>By Chinese remainder theorem,<br>$$<br>\mathbb{Z}_{n}\cong\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}.<br>$$<br>Pick $c\mapsto (1,b)$ by the above isomorphism. Then<br>$$<br>c^{(n-1)/2}\mapsto (1,-1),<br>$$<br>therefore $c^{(n-1)/2}\not\in S:=S_+\cup S_-$, then $S_+\subsetneq S\subsetneq \mathbb{Z}_n$. Since multiplication is closed under $S, S_+$, both are proper subgroups. By Lagrange theorem, $|S|\leq \frac{\phi(n)}{2}$. Therefore<br>$$<br>Pr(\exists i,a_i^{(n-1)/2}\neq\pm 1)\geq 1-2^{-t},<br>$$<br>is a lower bound for the rejection probability.</p>
 <ul>
 <li>Case $n = p^e$, prime power.</li>
 </ul>
