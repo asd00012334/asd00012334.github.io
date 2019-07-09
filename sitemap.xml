@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://asd00012334.github.io/2019/07/09/Optimality-of-Grover-Search/</loc>
+    
+    <lastmod>2019-07-09T12:01:17.202Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://asd00012334.github.io/2019/05/18/On-the-Communication-Complexity-of-EQ/</loc>
     
     <lastmod>2019-05-18T18:49:27.074Z</lastmod>
@@ -58,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://asd00012334.github.io/2018/11/16/%E6%96%B0%E9%96%8B%E5%BC%B5/</loc>
-    
-    <lastmod>2019-01-12T22:17:52.982Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://asd00012334.github.io/2018/12/14/ICPC-Japan-Yokohama-%E5%9B%9E%E9%A1%A7/</loc>
     
     <lastmod>2019-01-12T22:17:52.982Z</lastmod>
@@ -72,7 +72,7 @@
   </url>
   
   <url>
-    <loc>http://asd00012334.github.io/categories/index.html</loc>
+    <loc>http://asd00012334.github.io/2018/11/16/%E6%96%B0%E9%96%8B%E5%BC%B5/</loc>
     
     <lastmod>2019-01-12T22:17:52.982Z</lastmod>
     
@@ -80,6 +80,13 @@
   
   <url>
     <loc>http://asd00012334.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-01-12T22:17:52.982Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://asd00012334.github.io/categories/index.html</loc>
     
     <lastmod>2019-01-12T22:17:52.982Z</lastmod>
     
