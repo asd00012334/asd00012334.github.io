@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- added for latex and verification -->    
+<meta name="google-site-verification" content="S_xM9GykWsovjfZCTtQATi85eW3bkwNfP9rA7nHNI4Q">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
+      processEscapes: true
+    }
+  });
+
+
+
+
+In theory of computatio">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Taylor Huang">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Free Monoid and McMillan&#39;s Inequality">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
+      processEscapes: true
+    }
+  });
+
+
+
+
+In theory of computatio">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Taylor Huang&#39;s">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://asd00012334.github.iohttps://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://asd00012334.github.iohttps://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>Free Monoid and McMillan&#39;s Inequality - Taylor Huang&#39;s</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/asd00012334">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Free Monoid and McMillan's Inequality</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-01-20
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
+<p>In theory of computation, or formal language, we usually define an alphabet to be some arbitrary finite (non-empty) set. This of course shows no problem along with construction of strings that is (usually) as below.</p>
+<p>Given a finite non-empty set $\Sigma$, a string $s$ is defined as a sequence of its elements,<br>$$<br>s=\sigma_1\sigma_2…\sigma_r\in\Sigma^*.<br>$$</p>
+<p>A language is defined as collection of strings,</p>
+<p>$$<br>L\subseteq\Sigma^*.<br>$$<br>We took some advantages of the notation, one might just implicitly accept that there’s a binary operation that concatenate two different strings so that we don’t have to write out the comma’s in between.</p>
+<h3 id="Alphabet"><a href="#Alphabet" class="headerlink" title="Alphabet"></a>Alphabet</h3><p>It turns out we could as well integrate the above definition based on “concatenation” only, which in this context refers to a <em>free monoid</em> operation. A monoid refer to a binary algebraic structure $(M,*)$ that satisfies:</p>
+<ul>
+<li>Associativity: $(ab)c=a(bc)$</li>
+<li>Identity’s existence: $\forall a\in M:ea=ae=a$</li>
+</ul>
+<p>A monoid is called free if there’s a basis $B=\{b_1,…,b_r\}$ that generates the whole set.<br>$$<br>\forall m\in M\exists l_i’s: b_{l_1}b_{l_2}…b_{l_k}=m,<br>$$<br>and the representation is unique, i.e.<br>$$<br>b_{l_1}b_{l_2}…b_{l_r}=b_{k_1}b_{k_2}…b_{k_r’}\iff r=r’ \land \forall i:l_i=k_i<br>$$<br>It is also worth noting that basis of a free monoid must be unique, and the cardinality of $B$ is called its free-monoid rank. Therefore we could just refer to “alphabet” as basis of some free monoid. Following that, we immediately obtain the alphabet of sub-monoid, for instance, if $\Sigma=\{0,1\}$, then $\{0,01\}$ is an alphabet while $\{0,1,01\}$ is not.</p>
+<h3 id="McMillan’s-Inequality"><a href="#McMillan’s-Inequality" class="headerlink" title="McMillan’s Inequality"></a>McMillan’s Inequality</h3><p>McMillan’s inequality is necessary for a set of strings to be an alphabet. Suppose $S=\{s_1,s_2,…,s_k\}\subseteq\Sigma^*$ is an alphabet. For $l_i:=|s_i|$ and $|\Sigma|=r$ we have,<br>$$<br>\sum_{1\leq i\leq k} r^{-l_i} \leq 1.<br>$$</p>
+<h4 id="proof"><a href="#proof" class="headerlink" title="proof."></a>proof.</h4><p>First we took $n$-power and expand the left-hand term, suppose the index of $r$ ranges from $n$ to $nL=n\max\{l_i\}$.<br>$$<br>(\sum_{1\leq i\leq k} r^{-l_i})^n = \sum_{n\leq i\leq nL} a_ir^{-i}.<br>$$<br>where $a_i$ is the number of ways to construct a length $i$ string from $n$ elements of $S$. Since $a_i\leq r^i$, we have<br>$$<br>(\sum_{1\leq i\leq k} r^{-l_i})^n\leq n(L-1).<br>$$<br>If the McMillan’s inequality does not hold, as $n\rightarrow\infty$, the above inequality will be violated since the left-hand side grows much faster than the right hand side. ${}_\square$</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+    <hr>
+    <h3>Comments:</h3>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=2183062418581965";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-comments" data-href="http://asd00012334.github.io/2019/01/20/Free-Monoid-and-McMillan-s-Inequality/index.html" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/taylor.huang.9" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/asd00012334" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:asd00012334@hotmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 Taylor Huang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>

@@ -94,16 +94,16 @@ $$
 $$
 可以透過下面迭代使解收斂至 $x$
 $$
-m_i = mid(l_i,r_i)\\\
-\pmatrix{l_0\\\r_0} = \pmatrix{l\\\r}\\\
-\pmatrix{l_{i+1}\\\r_{i+1}} = \pmatrix{m_i\\\r_i},m_i<x\\\
-\pmatrix{l_{i+1}\\\r_{i+1}} = \pmatrix{l_i\\\m_i},x<m_i
+m_i = mid(l_i,r_i)\\
+\pmatrix{l_0\\r_0} = \pmatrix{l\\r}\\
+\pmatrix{l_{i+1}\\r_{i+1}} = \pmatrix{m_i\\r_i},m_i<x\\
+\pmatrix{l_{i+1}\\r_{i+1}} = \pmatrix{l_i\\m_i},x<m_i
 $$
 
 仔細觀察 $mid$ 函數，其實正對應到連分數的迭代式，
 如果
 $$
-l_i = [a_0;a_1,a_2,...,a_{i-2}]\\\
+l_i = [a_0;a_1,a_2,...,a_{i-2}]\\
 r_i = [a_0;a_1,a_2,...,a_{i-1}]
 $$
 那麼有
@@ -122,7 +122,7 @@ $$
 $$
 總存在
 $$
-\frac{p_n}{q_n}=[a_0;a_1,a_2,...,a_n],\\\
+\frac{p_n}{q_n}=[a_0;a_1,a_2,...,a_n],\\
 |\frac{p_n}{q_n}-x|\leq|\frac{p}{q}-x|。
 $$
 

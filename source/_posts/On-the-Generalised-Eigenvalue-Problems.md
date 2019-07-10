@@ -3,17 +3,7 @@ title: On the Generalised Eigenvalue Problems
 date: 2018-11-20 03:00:07
 tags: eigenvalue
 ---
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script
-    src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
-</script>
+
 
 ### Standard Eigenvalue Probelm (SEP)
 給定矩陣 $A\in\mathbb{C}^{n\times n}$，求解
@@ -35,7 +25,7 @@ $$
 $$
 對應到 GEP 設定為:
 $$
-\pmatrix{-D&-M\\\\I&0}\pmatrix{x\\\\\\lambda x}=\frac{1}{\lambda}\pmatrix{K&0\\\0&I}\pmatrix{x\\\ \lambda x}
+\pmatrix{-D&-M\\I&0}\pmatrix{x\\\lambda x}=\frac{1}{\lambda}\pmatrix{K&0\\0&I}\pmatrix{x\\ \lambda x}
 $$
 
 - Polynomial Eigenvalue Problem (PEP)
@@ -45,8 +35,8 @@ $$
 
 對應到 GEP 設定為:
 $$
-\pmatrix{-A_1&...&...&-A_n\\\I&0&...&0\\\&\ddots&\ddots&\vdots\\\0&&I&0
-}\pmatrix{x\\\ \lambda x\\\ \vdots\\\ \lambda^{n-1} x}=\frac{1}{\lambda}\pmatrix{A_0\\\&I\\\&&\ddots\\\&&&I}\pmatrix{x\\\ \lambda x\\\ \vdots\\\ \lambda^{n-1} x}
+\pmatrix{-A_1&...&...&-A_n\\I&0&...&0\\&\ddots&\ddots&\vdots\\0&&I&0
+}\pmatrix{x\\\lambda x\\\vdots\\\lambda^{n-1} x}=\frac{1}{\lambda}\pmatrix{A_0\\&I\\&&\ddots\\&&&I}\pmatrix{x\\\lambda x\\\vdots\\\lambda^{n-1} x}
 $$
 
 - Rational Eigenvalue Problem (REP)
@@ -63,7 +53,7 @@ $$
 
 考慮偏微分算子
 $$
-D_t:\pmatrix{x_1\\\ \vdots\\\x_n}\mapsto \pmatrix{\frac{dx_1}{dt}\\\ \vdots\\\ \frac{dx_n}{dt}}
+D_t:\pmatrix{x_1\\ \vdots\\x_n}\mapsto \pmatrix{\frac{dx_1}{dt}\\ \vdots\\ \frac{dx_n}{dt}}
 $$
 對於 $A\in\mathbb{C}^{n\times n}$ ，一階偏微分方程組
 $$

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- added for latex and verification -->    
+<meta name="google-site-verification" content="S_xM9GykWsovjfZCTtQATi85eW3bkwNfP9rA7nHNI4Q">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Although there’s AKS test for primality test, it is usually impractical to use. We will introduce a test proposed by Gary Miller based on Reimann hypo">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Taylor Huang">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Miller-Rabin Primality Test">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Although there’s AKS test for primality test, it is usually impractical to use. We will introduce a test proposed by Gary Miller based on Reimann hypo">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Taylor Huang&#39;s">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://asd00012334.github.iohttps://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://asd00012334.github.iohttps://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>Miller-Rabin Primality Test - Taylor Huang&#39;s</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/asd00012334">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Miller-Rabin Primality Test</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-03-25
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/complexity/">#complexity</a> <a href="/tags/prime/">#prime</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Although there’s AKS test for primality test, it is usually impractical to use. We will introduce a test proposed by Gary Miller based on Reimann hypothesis then modifed by Michael Rabin into a randomized version that does not rely on such conjecture.</p>
+<h3 id="Theorem-Miller-Rabin"><a href="#Theorem-Miller-Rabin" class="headerlink" title="Theorem [Miller, Rabin]"></a>Theorem [Miller, Rabin]</h3><p>$$<br>PRIMES\in coRP<br>$$</p>
+<p>On input $n\in\mathbb{Z}$,</p>
+<ul>
+<li>rule out even numbers, and randomly pick $a\in\mathbb{Z}_n^\times$</li>
+<li>assume $n=r\cdot 2^k$, $r$ is odd</li>
+<li>accept if and only if the following holds<ul>
+<li>$a^r=1$</li>
+<li>$\exists l&lt;k, a^{r\cdot 2^l}=-1$</li>
+</ul>
+</li>
+</ul>
+<h3 id="Conversibility-of-Fermat’s-little-theorem"><a href="#Conversibility-of-Fermat’s-little-theorem" class="headerlink" title="Conversibility of Fermat’s little theorem"></a>Conversibility of Fermat’s little theorem</h3><p>It is a well known fact that for any prime $p$,<br>$$<br>\forall a\in\mathbb{Z}_p: a^{p-1} = 1.<br>$$</p>
+<p>It is natural to ask if converse still hold, i.e. given $n\in\mathbb{Z}$ that $\forall a\in\mathbb{Z}_n:a^{n-1}=1$, does it imply that $n$ is prime numbers? If so, it might naturally yield a primality test algorithm. Unfortunately, Carmichael numbers have not only been found but also proven to be infinitely many.</p>
+<p>But since $\mathbb{Z}_p$ is a finite field, consider the polynomial,<br>$$<br>f(x) = x^2-1,<br>$$<br>it contains no more then 2 roots, which is $\pm 1$. The Miller-Rabin test argues that converse “almost” holds.</p>
+<h3 id="Easy-Cases"><a href="#Easy-Cases" class="headerlink" title="Easy Cases"></a>Easy Cases</h3><p>If input is prime, from above we have shown that it is accepted, that is also why we have cut out error at one side. If given odd $n\in\mathbb{N}$, for $n=p^e$ be prime power, the argument in <a href="https://asd00012334.github.io/2019/03/22/Randomized-Primality-Test/">previous discussion</a> has shown that it is accepted with probability bounded under $\frac{1}{2}$.</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>The algorithm clearly uses polynomial time. Also, it suffices to discuss the case where $n=m_1m_2$ composite. Let $\phi(n) = r\cdot 2^k, 2\nmid r$.</p>
+<p>Consider an inclusion tower of subgroups,<br>$$<br>S_i:= \{a\in\mathbb{Z}_n^\times : a^{r\cdot 2^i}=1\}, i\leq k\\<br>S_0\leq S_1\leq …\leq S_k\leq S_{k+1}:=\mathbb{Z}_n^\times.<br>$$</p>
+<p>If this inclusion tower is strict at one place, i.e. for some $c$, $S_{c-1}\lneq S_c$, then by Lagrange theorem, $|S_{c-1}|\leq |S_c|/2$. Then by picking the $c$ to be largest one, we’d have<br>$$<br>Pr(\exists i:a^{r\cdot 2^i}=-1\lor a^r=1)\leq Pr(a\in S_{c-1})\leq \frac{1}{2}.<br>$$</p>
+<p>Suppose otherwise, $S_0=S_1=…=S_k=\mathbb{Z}_n^\times$, then<br>$$<br>\forall a\in\mathbb{Z}_n^\times: a^r=1.<br>$$<br>Note that this case only possibly happens when $n$ is a Carmichael numbers, the Carmichael numbers have been proven to be square free, and we are going to show that it’s not possible to even happens.<br>And by Chinese remainder theorem,<br>$$<br>\mathbb{Z}_n\cong\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2},<br>$$<br>choose $m_1$ to be $p^e$ prime power and co-prime with $m_2$. By the fact that $\mathbb{Z}_{p^e}=\langle \alpha\rangle$ is cyclic, assume<br>$$<br>a\mapsto (\alpha,1),<br>$$<br>defined by such ring isomorphism. Then<br>$$<br>a^r\mapsto(\alpha^r,1)=(1,1).<br>$$<br>But then $r=0\mod\phi(p^e)$, which contradict with the fact that $r$ is odd. $_\Box$</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+    <hr>
+    <h3>Comments:</h3>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=2183062418581965";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-comments" data-href="http://asd00012334.github.io/2019/03/25/Miller-Rabin-Primality-Test/index.html" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/taylor.huang.9" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/asd00012334" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:asd00012334@hotmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 Taylor Huang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>
