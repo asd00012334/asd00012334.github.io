@@ -4,7 +4,7 @@
 
 # Site
 title: Taylor Huang's
-subtitle: Computationist x Mathematician
+subtitle: A complexitopia where algo meets math
 description:
 keywords:
 author: Taylor Huang
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: clean-blog
+theme: current
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
