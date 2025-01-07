@@ -1,0 +1,53 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  Tags: /tags
+  About Me: https://www.yuhsuan.phd
+  Github:
+    url: https://github.com/asd00012334/
+    icon: github
+  Google Scholar:
+    url: https://scholar.google.com/citations?user=ltY5RIYAAAAJ
+    icon: brands fa-google-scholar
+    
+
+
+# Title on top left of menu. Leave empty to use main blog title
+menu_title: The Blog
+
+# URL of the Home page image
+index_cover: https://imgur.com/lby4Rgx.jpg
+
+# Default post title
+default_post_title: Untitled
+
+# Comments. Choose one by filling up the information
+comments:
+  # Disqus comments
+  disqus_shortname:
+  # Facebook comments
+  facebook:
+    appid: 2183062418581965
+    comment_count: 5
+    comment_colorscheme: light
+
+# Google Analytics Tracking ID
+google_analytics:
+
+# Addthis ID
+addthis:
+
+# set your own favicon
+favicon: /img/favicon_clover/favicon.ico
+
+
+# Social Accounts
+twitter_url:
+twitter_handle:
+facebook_url: https://www.facebook.com/taylor.huang.9
+github_url: https://github.com/asd00012334/
+gitlab_url:
+linkedin_url:
+mailto: asd00012334@hotmail.com
+google_scholar_url: https://scholar.google.com/citations?user=ltY5RIYAAAAJ
